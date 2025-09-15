@@ -1,0 +1,122 @@
+/* General App Layout */
+.App {
+  text-align: center;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+header h1 {
+  font-size: 2em;
+  margin: 0;
+  color: #333;
+}
+
+header nav a {
+  margin: 0 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+main {
+  text-align: left;
+}
+
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+thead th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin: 0 2px;
+}
+
+td input[type="text"] {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+/* Make specific columns wider or narrower */
+table th:nth-child(2), table td:nth-child(2) { width: 20%; } /* 計畫/專案 */
+table th:nth-child(3), table td:nth-child(3) { width: 15%; } /* 工作描述 */
+table th:nth-child(4), table td:nth-child(4) { width: 12%; } /* 工作分類 */
+table th:nth-child(5), table td:nth-child(5) { width: 15%; } /* 工作項目 */
+
+
+tfoot td {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+/* Footer Styles */
+footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.date-navigation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.date-navigation span {
+  font-weight: bold;
+}
+
+.submit-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-section button:hover {
+  background-color: #218838;
+}
