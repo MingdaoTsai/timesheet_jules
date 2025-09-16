@@ -90,11 +90,15 @@ td input[type="text"] {
   padding: 4px;
 }
 
+/* Let the browser's table layout algorithm handle widths */
+table {
+  table-layout: fixed;
+}
+
 /* Make specific columns wider or narrower */
-table th:nth-child(2), table td:nth-child(2) { width: 20%; } /* 計畫/專案 */
-table th:nth-child(3), table td:nth-child(3) { width: 15%; } /* 工作描述 */
-table th:nth-child(4), table td:nth-child(4) { width: 12%; } /* 工作分類 */
-table th:nth-child(5), table td:nth-child(5) { width: 15%; } /* 工作項目 */
+table th:nth-child(2), table td:nth-child(2) { width: 25%; } /* 計畫/專案 */
+table th:nth-child(3), table td:nth-child(3) { width: 20%; } /* 工作描述 */
+/* The rest of the columns will auto-distribute */
 
 
 tfoot td {

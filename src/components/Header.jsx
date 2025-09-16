@@ -1,11 +1,17 @@
 import React from 'react';
 
-function Header({ onCopyLastWeek, isSubmitted }) {
+function Header({ onCopyLastWeek, onAddTask, isSubmitted }) {
   return (
     <header>
       <h1>我的工作日誌</h1>
       <nav>
-        <a href="#">新增工作</a>
+        <button
+          onClick={onAddTask}
+          className="link-button"
+          disabled={isSubmitted}
+        >
+          新增工作
+        </button>
         <button
           onClick={onCopyLastWeek}
           className="link-button"
