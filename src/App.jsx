@@ -94,6 +94,31 @@ function App() {
     }
   };
 
+  const handleAddTask = () => {
+    const newTask = {
+      id: Date.now(), // Simple unique ID
+      project: '',
+      description: '',
+      category: '',
+      item: '',
+      tags: '',
+      hours: [0, 0, 0, 0, 0, 0, 0],
+      isEditing: true, // Start in edit mode
+    };
+
+    setTimesheets(prev => {
+      const currentTasks = prev[currentWeekInfo.key]?.tasks || [];
+      const newTasks = [...currentTasks, newTask];
+      return {
+        ...prev,
+        [currentWeekInfo.key]: {
+          ...prev[currentWeekInfo.key],
+          tasks: newTasks,
+        },
+      };
+    });
+  };
+
   const handleTaskChange = (taskId, field, value) => {
     setTimesheets(prev => {
       const newTasks = prev[currentWeekInfo.key].tasks.map(task =>
@@ -156,6 +181,7 @@ function App() {
     <div className="App">
       <Header
         onCopyLastWeek={handleCopyLastWeek}
+        onAddTask={handleAddTask}
         isSubmitted={currentTimesheet.isSubmitted}
       />
       <main>
