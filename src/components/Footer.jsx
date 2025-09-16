@@ -1,16 +1,16 @@
 import React from 'react';
 
-function Footer({ dateRange, onPrevWeek, onNextWeek }) {
+function Footer({ dateRange, onPrevWeek, onNextWeek, onSubmit, isSubmitted }) {
   return (
     <footer>
       <div className="date-navigation">
-        <button onClick={onPrevWeek}>&lt;&lt;</button>
+        <button onClick={onPrevWeek} disabled={isSubmitted}>&lt;&lt;</button>
         <span>{dateRange}</span>
         <a href="#">(This Week)</a>
-        <button onClick={onNextWeek}>&gt;&gt;</button>
+        <button onClick={onNextWeek} disabled={isSubmitted}>&gt;&gt;</button>
       </div>
       <div className="submit-section">
-        <button>Submit to Boss</button>
+        <button onClick={onSubmit} disabled={isSubmitted}>Submit to Boss</button>
       </div>
     </footer>
   );
